@@ -14,5 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.1.0"
+  },
+  "dependencies": {
+    "@angular/cli": "^14.0.0",
+    "@angular/compiler-cli": "^14.0.0"
   }
 }
