@@ -1,0 +1,86 @@
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <div class="pb-5">
+          <div class="col page-title p-0"><h1>Registracija</h1></div>
+          <div class="col">
+            <h5>Razlog zbog kojeg su navedeni podaci neophodni je što tačniji proračun tvoje potrebe za dnevnim kalorijskim unosom!</h5>
+          </div>
+        </div>
+        <form class="login-form pt-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="pb-5">
+            <div class="form-outline mb-4">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" formControlName="email" required id="email" placeholder="marinamarinkovic@mail.com" class="form-control form-control-lg" />
+            </div>
+
+            <!-- Password input -->
+            <div class="row d-flex mb-4">
+              <div class="col form-outline">
+                <label class="form-label" for="password">Šifra</label>
+                <input type="password" formControlName="password" required minlength="1" id="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class="form-control form-control-lg" />
+              </div>
+              <div class="col form-outline">
+                <label class="form-label" for="password2">Ponovi šifru</label>
+                <input type="password" formControlName="password2" required minlength="1" id="password2" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;" class="form-control form-control-lg" />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <p>Vi ste?</p>
+              <div class="form-check form-check-inline pe-4">
+                <label class="form-check-label" for="female">Žensko</label>
+                <input class="form-check-input" type="radio" id="female" formControlName="gender" value="female" checked>
+              </div>
+              <div class="form-check form-check-inline">
+                <label class="form-check-label" for="male">Muško</label>
+                <input class="form-check-input" type="radio" id="male" formControlName="gender" value="male">
+              </div>
+            </div>
+
+            <div class="row d-flex mb-4">
+              <div class="col form-outline">
+                <label class="form-label" for="weight">Težina (u kg)</label>
+                <input type="number" id="weight" formControlName="weight" placeholder="npr: 78" class="form-control form-control-lg" />
+              </div>
+              <div class="col form-outline">
+                <label class="form-label" for="height">Visina (u cm)</label>
+                <input type="number" id="height" formControlName="height" placeholder="npr: 173" class="form-control form-control-lg" />
+              </div>
+            </div>
+
+            <div class="row d-flex mb-4">
+              <div class="col-md-4 form-outline">
+                <label class="form-label" for="age">Godine</label>
+                <input type="number" id="age" formControlName="age" placeholder="npr: 40" class="form-control form-control-lg" />
+              </div>
+              <div class="col-md-8">
+                <label class="form-label" for="activity">Aktivnost</label>
+                <select class="form-select form-control form-control-lg" formControlName="activity" id="activity" aria-label="Default select example">
+                  <option selected value="0">Malo ili nikako aktivan</option>
+                  <option value="1">Aktivan 1 do 2 puta sedmično</option>
+                  <option value="2">Aktivan više puta sedmično</option>
+                  <option value="3">Vrlo aktivan (sportista)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="row d-flex align-items-center justify-content-center pt-3">
+            <div class="col">
+              <div class="col"><p class="mb-0">Imaš nalog?</p></div>
+              <div class="col"><a routerLink="/login" routerLinkActive="active"><h4>Prijavi se</h4></a></div>
+            </div>
+            <div class="col">
+              <button type="submit" class="btn btn-success btn-lg btn-block button">Potvrdi</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
+      </div>
+    </div>
+  </div>
+</section>

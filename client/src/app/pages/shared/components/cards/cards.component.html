@@ -1,0 +1,19 @@
+<div *ngFor="let model of models" style="padding-right: 1em;">
+  <div class="card mb-3 my-card" style="max-width: 20rem;">
+    <div class="card-header bg-transparent">
+      <p class="card-text">{{model.title | slice:0:20}}</p>
+      <p class="card-text">{{model.calories}}kcal</p>
+    </div>
+    <div class="card-body p-0">
+      <div>
+        <div class="like-button">
+
+        </div>
+        <img class="card-img-top" style="min-height: 250px;" src={{model.image}} alt={{model.title}}>
+      </div>
+    </div>
+    <div class="card-footer bg-transparent" style="min-height: 70px;">
+      <p class="card-text">{{model.title}}</p>
+    </div>
+  </div>
+</div>

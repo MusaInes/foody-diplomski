@@ -1,0 +1,54 @@
+<div class="container-fluid body h-100 w-100">
+  <div class="row h-100">
+    <div class="col h-100">
+      <div class="row p-4">
+        <div class="col-6">
+          <div class="main-user-suggestion p-4  h-100">
+            <blockquote class="blockquote text-right">
+              <h6 class="accent-text">Zdravo {{this.userService.user.name || this.userService.user.email}}</h6>
+              <p class="fs-5">Tvoja preporučena dnevna kalorijska količina je:</p>
+              <footer class="accent-text text-end">{{this.userCalories | number : '1.0-0'}} kcal</footer>
+            </blockquote>
+            <!-- <div class="row">
+              <div class="col">
+                <h6 class="accent-text">Zdravo Marina</h6>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8">
+                <p class="fs-5">Tvoja preporučena dnevna kalorijska količina je:</p>
+              </div>
+              <div class="col-4">
+                <p class="fs-5 text-end">2500 kcal</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="main-user-suggestion p-4 h-100">
+            <blockquote class="blockquote text-right">
+              <h6 class="accent-text">Citat dana</h6>
+              <p class="mb-0">{{this.quote.quote}}</p>
+              <footer class="blockquote-footer text-end" style="padding-top: 10px;"><cite title="Source Title">{{this.quote.author}}</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="row p-4 main-graphs">
+        <div class="col-6">
+          <div class="pie-graph-section">
+            <app-chart></app-chart>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="bar-graph-section">
+            <app-chart></app-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-suggestion [userCalories]="this.userCalories"></app-suggestion>
+    </div>
+  </div>
+</div>

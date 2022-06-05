@@ -1,0 +1,383 @@
+/* You can add global styles to this file, and also import other style files */
+
+// /* Importing Bootstrap SCSS file. */
+// @import "~bootstrap/scss/bootstrap";
+
+// /* Importing Datepicker SCSS file. */
+// @import "~ngx-bootstrap/datepicker/bs-datepicker";
+
+// Google Fonts
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap);
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+// Font Variables
+$main-font: 'Poppins', sans-serif;
+
+$white-color: #fffefe;
+$gray-color: #f0f0f0;
+$primary-color: #35a400;
+$primary-color-link: #2b8800;
+$accent-color: #ff6332;
+$accent-color-link: #157347;
+$text-color: #001207;
+$gray-color-shadow: #818181;
+$background-1: #FAFAFA;
+$danger-color: #ff3232;
+
+$border-dark: rgba($gray-color-shadow, 0.25);
+
+html, body {
+  height: 100% !important;
+  font-family: $main-font !important;
+}
+
+.main-header,
+.main-items,
+.main-user-suggestion,
+.bar-graph-section,
+.pie-graph-section,
+.suggestion-item,
+.my-card,
+.my-long-card,
+.user-counter,
+.user-profile,
+.login-form input,
+.login-form select,
+.nav-menu ul {
+  border-radius: 1rem !important;
+  box-shadow: 0px 7px 10px $border-dark !important;
+  border: 0 !important;
+}
+
+.main-header ul,
+.main-header li > a {
+  color: rgba($text-color, 0.7);
+}
+
+.main-header li > a.active{
+  color: $text-color !important;
+}
+
+.main-brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $accent-color !important;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+}
+
+.body {
+  padding-top: 70px;
+  padding-bottom: 12px;
+}
+
+.navbar-header > a:active {
+  // background-color: none;
+}
+
+/* unvisited link */
+a:link {
+  color: $primary-color;
+}
+
+/* visited link */
+a:visited {
+  color: $primary-color-link;
+}
+
+/* mouse over link */
+a:hover {
+  color: $accent-color-link;
+}
+
+/* selected link */
+a:active {
+  color: $accent-color;
+}
+
+.main-items .row {
+  text-align: center;
+}
+
+.suggestion {
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.suggestion-item {
+  background-color: $background-1;
+  min-height: 125px;
+  margin-bottom: 1rem;
+}
+
+.my-long-card img,
+.suggestion-item img {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  max-height: 250px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem 0 0 1rem ;
+}
+
+.item-checkbox {
+  width: 100%;
+  text-align: end;
+}
+
+.item-checkbox input {
+  float: none !important;
+  margin: 0 !important;
+  border-radius: 1rem !important;
+  width: 26px;
+  height: 26px;
+}
+
+.button, .button-danger {
+  color: $white-color;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  border-radius: 2rem;
+  box-shadow: 0px 7px 10px $border-dark;
+  width: 15rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.3rem;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.button-danger {
+  color: $danger-color;
+  background-color: transparent;
+  border-color: $danger-color;
+}
+
+.back-button {
+  color: $primary-color;
+  background-color: transparent;
+  border-color: $primary-color;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 3rem;
+}
+
+.main-user-suggestion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-user-suggestion h6 + p{
+  margin-bottom: 8px !important;
+}
+
+.main-user-suggestion blockquote {
+  footer {
+    align-self: flex-end;
+  }
+}
+
+.main-screen-button {
+  border-radius: 50%;
+  background-color: $primary-color;
+}
+
+.todays-meals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.receipt-image img {
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  // transform: scale(0.85, 0.85);
+  // -ms-transform: scale(0.85, 0.85);
+  // -webkit-transform: scale(0.85, 0.85);
+}
+
+.receipt-description {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $primary-color;
+}
+
+.page-title {
+  padding-left: 1rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: $primary-color;
+}
+
+.page-subtitle {
+  padding-left: 1rem;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $text-color;
+}
+
+.accent-text {
+  color: $primary-color;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.like-button {
+  background-color: $background-1;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  position: absolute;
+}
+
+::marker {
+  color: $primary-color;
+  font-size: 1.2em;
+}
+
+.login-form input {
+  border-radius: 3rem;
+}
+
+.login-form label {
+  padding-left: 1rem;
+  padding-bottom: 0;
+  margin: 0;
+  opacity: 0.7
+}
+
+.login-form .form-control {
+  color: $text-color;
+  font-weight: 500;
+}
+
+input,
+input::-webkit-input-placeholder,
+select {
+  opacity: 0.7 !important;
+  font-size: 0.95rem !important;
+  line-height: 2.5 !important;
+}
+
+input[type="password"]::-webkit-input-placeholder {
+  font-size: 0.8rem !important;
+}
+
+input[type="password"] {
+  font-family: Verdana;
+  letter-spacing: 0.125em;
+}
+
+input:active {
+  border: none !important;
+}
+
+select {
+  min-height: calc(1.5em + 1rem + 2px) !important;
+  padding: 0.5rem 1rem !important;
+}
+
+// .form-control:invalid {
+//   box-shadow: 0 0 0 0.2rem rgba($danger-color, 0.3);
+// }
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.3);
+}
+
+.form-check-input:checked {
+  background-color: $primary-color !important;
+  border-color: $primary-color !important;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem rgba($primary-color, 0.3) !important;
+}
+
+.nav-button:focus {
+  box-shadow: none
+}
+
+.dropdown-item {
+  background-color: transparent !important;
+}
+
+.nav-link:focus,
+.nav-link:hover,
+.dropdown-item:focus,
+.dropdown-item:hover,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color: $primary-color !important;
+}
+
+.small-text {
+  font-size: small;
+  color: $text-color;
+}
+
+.user-counter {
+  .col:nth-child(2) {
+    border: 1px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-top-style: hidden;
+    border-bottom-style: hidden;
+    border-color: rgba($gray-color-shadow, 0.1);
+  }
+}
+
+.user-counter-calories {
+  font-size: large;
+  font-weight: 500;
+
+  &.suggested {
+    color: $text-color;
+  }
+
+  &.chosen {
+    color: $accent-color;
+  }
+
+  &.remaining {
+    color: $primary-color;
+  }
+}
+
+.app-cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.img-profile {
+  border-radius: 100%;
+  padding: 0px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+// .bar-graph-section {
+//   margin-left: 0.5rem;
+// }
+
+// .pie-graph-section {
+//   margin-right: 0.5rem;
+// }

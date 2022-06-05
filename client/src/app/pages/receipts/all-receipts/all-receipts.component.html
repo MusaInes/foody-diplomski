@@ -1,0 +1,55 @@
+<div class="container-fluid body h-100 w-100">
+  <div class="row h-100">
+    <div class="col h-100">
+      <div class="row h-25 ps-4 py-4">
+        <div class="col-5 p-0">
+          <div class="d-flex flex-column align-content-start ps-0">
+            <div class="d-flex flex-row align-content-start pb-2">
+              <button type="button" class="btn btn-success back-button"><</button>
+              <div class="d-flex align-items-center page-title">Recepti</div>
+            </div>
+            <h2>Svi Recepti</h2>
+          </div>
+        </div>
+        <div class="col h-100 user-counter me-2">
+          <div class="row h-100">
+            <div class="col position-relative">
+              <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="d-flex flex-column align-items-center pb-2">
+                  <div class="user-counter-calories suggested">2500 kcal</div>
+                  <div class="small-text">Preporučeno</div>
+                </div>
+              </div>
+            </div>
+            <div class="col position-relative">
+              <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="d-flex flex-column align-items-center pb-2">
+                  <div class="user-counter-calories chosen">500 kcal</div>
+                  <div class="small-text">Izabrano</div>
+                </div>
+              </div>
+            </div>
+            <div class="col position-relative">
+              <div class="position-absolute top-50 start-50 translate-middle">
+                <div class="d-flex flex-column align-items-center pb-2">
+                  <div class="user-counter-calories remaining">2000 kcal</div>
+                  <div class="small-text">Preostalo</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row h-75">
+        <div class="col d-flex flex-column justify-content-between h-100">
+          <div *ngFor="let item of list" class="align-self-center">
+            <app-long-card></app-long-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <app-suggestion></app-suggestion>
+    </div>
+  </div>
+</div>
