@@ -6,17 +6,15 @@
           <button type="button" class="btn btn-success back-button"><</button>
           <div class="d-flex align-items-center page-title">ZAPOČNIMO S KUHANJEM</div>
         </div>
-        <h2>Kajgana sa slaninom</h2>
+        <h2>{{receiptInfo.title}}</h2>
       </div>
       <div class="d-flex align-content-start flex-wrap receipt-image pt-3">
-        <img src="https://static.onecms.io/wp-content/uploads/sites/20/2022/02/11/valentines-food-deals-2.jpg" class="img-thumbnail" alt="...">
+        <img src="{{receiptInfo.image}}" class="img-thumbnail" alt="...">
       </div>
       <div class="pt-3">
         <h3>Koraci</h3>
         <ul>
-          <li>Slaninu nasjeckajte na tanke ploškice i ispržite u tavi</li>
-          <li>Kad slanina porumeni i pusti mast, pridodajte joj jaja, neprekidno sve miješajući.</li>
-          <li>Ako je slanina dovoljno slana, nije potrebno soliti.</li>
+          <li *ngFor="let item of instructions.steps">{{item.step}}</li>
         </ul>
       </div>
     </div>
@@ -26,17 +24,17 @@
           <div class="main-items h-100">
             <div class="d-flex flex-row pt-5 ps-5 receipt-description">DORUČAK</div>
             <div class="d-flex flex-column pt-4 ps-5">
-              <p>5 minuta</p>
-              <p>1000kcal</p>
+              <p>{{receiptInfo.readyInMinutes}} minuta</p>
+              <p>{{nutrients.amount}} {{nutrients.unit}}</p>
               <h5>SASTOJCI</h5>
               <ul>
-                <li>2 jaja</li>
-                <li>25g slanine</li>
-                <li>so po potrebi</li>
+                <li *ngFor="let ingredient of receiptInfo.extendedIngredients">{{ingredient.measures.metric.amount | number: '1.0-0'}}{{ingredient.measures.metric.unitShort}} {{ingredient.nameClean}}</li>
+                <!-- <li>25g slanine</li>
+                <li>so po potrebi</li> -->
               </ul>
             </div>
             <div class="d-flex justify-content-center pt-5 pb-3 align-self-end">
-              <button type="button" class="btn btn-success button">Izaberi</button>
+              <button type="button" class="btn btn-success button" (click)="applySelectedMeals()">Izaberi</button>
             </div>
           </div>
         </div>

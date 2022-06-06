@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { CaloryCounterService } from 'src/app/pages/shared/services/calory-counter.service';
 import { TodayMealsService } from 'src/app/pages/shared/services/today-meals.service';
 import { UserService } from 'src/app/pages/shared/services/user.service';
@@ -16,7 +17,7 @@ export class SuggestionItemComponent implements OnInit {
   public mealType: any[] = ['Doručak', 'Ručak', 'Večera'];
   public selectedMeals: any[] = [];
 
-  constructor(private http: HttpClient, private calorieService: CaloryCounterService, private mealsService: TodayMealsService) { }
+  constructor(private http: HttpClient, private calorieService: CaloryCounterService, private mealsService: TodayMealsService, private router: Router) { }
 
   ngOnInit(): void {
     this.mealList = [
@@ -54,13 +55,12 @@ export class SuggestionItemComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    // this.getMeals();
+    this.getMeals();
   }
 
   saveSelectedMeals(selectedMeals: any[]) {
     this.http.post('http://localhost:4000/api/products', {selectedMeal: selectedMeals}).subscribe((response: any) => {
       this.mealsService.todayMeals = response;
-      console.log('response', this.mealsService.todayMeals);
     })
   }
 
@@ -73,7 +73,6 @@ export class SuggestionItemComponent implements OnInit {
       }
     })
 
-    console.log(temp);
     this.saveSelectedMeals(temp);
 
   }
@@ -106,6 +105,10 @@ export class SuggestionItemComponent implements OnInit {
     this.http.get<any>('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByNutrients', {...requestOptions, params: params}).subscribe((response: any) => {
       this.mealList = response;
     })
+  }
+
+  openReceipt(id: string): void {
+    this.router.navigate([`/receipts/receipt/${id}`]);
   }
 
 }

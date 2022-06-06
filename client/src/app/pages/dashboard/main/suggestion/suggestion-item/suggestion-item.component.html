@@ -9,8 +9,8 @@
         <div class="ml-auto"><h5>{{item.calories}} kcal</h5></div>
       </div>
     </div>
-    <div class="float-start p-2">
-      <h5 style="text-align: left;">{{item.title}}</h5>
+    <div class="float-start p-2 receipt-title">
+      <h5 style="text-align: left;" (click)="openReceipt(item.id)">{{item.title}}</h5>
     </div>
     <div class="form-check item-checkbox mt-auto p-2">
       <input class="form-check-input" type="checkbox" value="" (change)="setSelectedMeals($event, i)" id="flexCheckDefault">

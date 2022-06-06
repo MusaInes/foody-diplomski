@@ -16,7 +16,7 @@
             <div class="col position-relative">
               <div class="position-absolute top-50 start-50 translate-middle">
                 <div class="d-flex flex-column align-items-center pb-2">
-                  <div class="user-counter-calories suggested">2500 kcal</div>
+                  <div class="user-counter-calories suggested">{{userCalories | number: '1.0-0'}} kcal</div>
                   <div class="small-text">Preporučeno</div>
                 </div>
               </div>
@@ -24,7 +24,7 @@
             <div class="col position-relative">
               <div class="position-absolute top-50 start-50 translate-middle">
                 <div class="d-flex flex-column align-items-center pb-2">
-                  <div class="user-counter-calories chosen">500 kcal</div>
+                  <div class="user-counter-calories chosen">{{currentCalories | number: '1.0-0'}} kcal</div>
                   <div class="small-text">Izabrano</div>
                 </div>
               </div>
@@ -32,7 +32,7 @@
             <div class="col position-relative">
               <div class="position-absolute top-50 start-50 translate-middle">
                 <div class="d-flex flex-column align-items-center pb-2">
-                  <div class="user-counter-calories remaining">2000 kcal</div>
+                  <div class="user-counter-calories remaining">{{userCalories-currentCalories | number: '1.0-0'}} kcal</div>
                   <div class="small-text">Preostalo</div>
                 </div>
               </div>
@@ -42,8 +42,8 @@
       </div>
       <div class="row h-75">
         <div class="col d-flex flex-column justify-content-between h-100">
-          <div *ngFor="let item of list" class="align-self-center">
-            <app-long-card></app-long-card>
+          <div *ngFor="let item of receiptList" class="align-self-center">
+            <app-long-card [model]="item"></app-long-card>
           </div>
         </div>
       </div>

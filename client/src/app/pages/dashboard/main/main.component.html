@@ -37,12 +37,12 @@
       <div class="row p-4 main-graphs">
         <div class="col-6">
           <div class="pie-graph-section">
-            <app-chart></app-chart>
+            <app-chart [data]="graphData" [labels]="graphLabels"></app-chart>
           </div>
         </div>
         <div class="col-6">
-          <div class="bar-graph-section">
-            <app-chart></app-chart>
+          <div class="bar-graph-section" style="height: 100%;">
+            <app-chart [data]="graphBarData" [labels]="graphBarLabels" [type]="'bar'" [legend]="false"></app-chart>
           </div>
         </div>
       </div>
