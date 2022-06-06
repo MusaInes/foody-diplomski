@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
     if (!user.isAdmin) return;
     let eGui = document.createElement("div");
     if (user.email === params.node.data.user.email) {
-      eGui.innerHTML = `<button type="button" class="btn btn-danger btn-sm" disabled data-action="delete">Obriši</button>`;
+      eGui.innerHTML = `<button type="button" class="btn btn-danger btn-sm" disabled>Obriši</button>`;
     }
     else {
       eGui.innerHTML = `<button type="button" class="btn btn-danger btn-sm" data-action="delete">Obriši</button>`;
@@ -54,8 +54,6 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-
   getCurrentUser() {
     return this.user.user;
   }
@@ -73,14 +71,15 @@ export class AdminComponent implements OnInit {
     if (params.column.colId === "action" && params.event.target.dataset.action) {
       let action = params.event.target.dataset.action;
 			if (action === "delete") {
-				this.deleteUser(params);
+        if(window.confirm('Da li zaista želiš obrisati korisnika?')) {
+          this.deleteUser(params);
+        }
 			}
 		}
 	}
 
   deleteUser(params: any) {
     const user = params.node.data.user;
-    if (user.email === params.node.data.user.email) return;
     this.http.delete<any>(`http://localhost:4000/api/profile/${user._id}`).subscribe((response: any) => {
       this.getAllUsers();
     })
